@@ -1,0 +1,24 @@
+{
+  "name": "reats",
+  "version": "1.0.0",
+  "description": "Resto managment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Rruiz15/Reats.git"
+  },
+  "keywords": [
+    "Restaurants",
+    "food",
+    "managment"
+  ],
+  "author": "Robert Ruiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rruiz15/Reats/issues"
+  },
+  "homepage": "https://github.com/Rruiz15/Reats#readme"
+}
