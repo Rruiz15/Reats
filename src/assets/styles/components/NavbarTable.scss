@@ -1,0 +1,54 @@
+@import '../Vars.scss';
+
+.table{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:45px;
+
+    & img{
+        margin-right:8px;
+        height: 30px;
+        width: 30px;
+
+    }
+
+    &--selected{
+        @extend.table;
+        background:$primary;
+        border-left: solid 5px $font;
+    }
+
+    &red{
+        @extend .table;
+        border-left: solid 5px rgb(220,53,69);
+        background: #dc3545;
+        background: linear-gradient(150deg, rgba(220,53,69,0.6) 0%, rgba(220,53,69,0.3) 50%, rgba(220,53,69,0.1) 100%);
+    }
+
+    &yellow{
+        @extend .table;
+        border-left: solid 5px rgb(249,211,144);
+        background: rgb(249,211,144);
+        background: linear-gradient(1500deg, rgba(249,211,144,0.6) 0%, rgba(249,211,144,0.3) 50%, rgba(249,211,144,0.1) 100%);
+    }
+
+    &green{
+        @extend .table;
+        border-left: solid 5px rgb(0,255,192);
+        background: rgb(0,255,192);
+        background: linear-gradient(1500deg, rgba(0,255,192,0.6) 0%, rgba(0,255,192,0.3) 50%, rgba(0,255,192,0.1) 100%);
+    }
+
+    &--number{
+        color:$font;
+        font-size: 18px;
+    }
+
+    &--numberdisabled{
+        color:$fontDisabled;
+        font-size: 18px;
+    }
+}

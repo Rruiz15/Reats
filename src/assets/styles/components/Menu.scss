@@ -1,0 +1,14 @@
+//Vars 
+@import '../Vars.scss';
+
+.menu{
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    background-color: $secundary;
+    border-radius: 15px;
+    margin:10px 50px 30px 40px;
+    
+    &__divTitle{
+        @extend .divTitle;
+    }
+}

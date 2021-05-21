@@ -1,0 +1,26 @@
+//Vars
+@import './Vars.scss';
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    margin:0;
+    
+}
+
+#app{
+    height:100vh;
+    margin:0;
+}
+
+.App{
+    height:100vh;
+    margin:0;
+    display: grid;
+    grid-template-rows: 1fr 1.2fr;
+    grid-template-columns: 0.5fr 3.25fr 3.25fr 3fr;
+    background-color:$primary; 
+}
+
