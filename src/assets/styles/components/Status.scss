@@ -8,9 +8,10 @@
     background-color: $secundary;
     border-radius: 15px;
     padding-bottom: 10px;
+    border: 1px solid $line;
 
     &__divTitle{
-        @extend .divTitle
+        @extend .divTitle;
     }
 
     &__container{

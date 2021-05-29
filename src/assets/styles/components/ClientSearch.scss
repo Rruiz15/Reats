@@ -2,30 +2,34 @@
 
 .clientsearch{
     width: 70%;
-    border: 1px solid $fade;
     display: flex;
     flex-direction: row;
     align-items: center;
-    height:40px;
+    height:25px;
+    margin: 0px;
+    padding: 0px;
     img{
-        width: 10%;
+        width: 20px;
+        height: 20px;
         margin-left:5px;
     }
 
     & .react-select-container{
         width: 90%;
         border:none;
-        color:$font;
         & .react-select__control{
             background-color:$secundary;
             border: 0px;
-            color:$font;
-            & span {
-                color:$font;
+            &--is-focused{
+                box-shadow: none;
             }
             & .react-select__value-container{
                 border: 0px;
-                color:$font;
+                & .css-b8ldur-Input{
+                    & .react-select__input{
+                        color: $font;
+                    }
+                }
             }
             & .react-select__indicators{
                 & .react-select__indicator-separator{

@@ -33,13 +33,13 @@
     &__title{
         grid-row: 1 / 2 ;
         @extend .divTitle;
-        border-left: 1px solid $fade;
+        border-left: 1px solid $line;
     }
 
     &__info{
         grid-row: 2 / 3 ;
         background-color: $primary;
-        border-left: 1px solid $fade;
+        border-left: 1px solid $line;
         display: flex;
         flex-direction: column;
         overflow: scroll;
@@ -55,15 +55,15 @@
         flex-direction: column;
         display: flex;
         justify-content: space-evenly;
-        border-left: 1px solid $fade;
-        border-top: 1px solid $fade;
+        border-left: 1px solid $line;
+        border-top: 1px solid $line;
         &--subtotal{
             @extend .info;
         }
 
         &--discount{
             @extend .info;
-            border-bottom: 1px solid $fade;
+            border-bottom: 1px solid $line;
         }
 
         &--total{
@@ -87,12 +87,12 @@
             justify-content: center;
             width: 300px;
             height: 60px;
-            background-color: $fade;
+            background-color: $color;
             border-radius: 10px;
             margin-right:20px;
 
             & p {
-                color: $font;
+                color: $primary;
                 margin: 0;
                 margin-right:5px;
             }
@@ -111,7 +111,7 @@
             justify-content: center;
             width: 70px;
             height: 60px;
-            background-color: $fade;
+            background-color: $line;
             border-radius: 10px;
         }
     }

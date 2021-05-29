@@ -1,11 +1,9 @@
 import React from 'react';
 
 const MenuSubItem = () => {
-    return (
-        <div className="MenuSubItem">
-            
-        </div>
-    );
-}
+  return (
+    <div className='MenuSubItem' />
+  );
+};
 
 export default MenuSubItem;
