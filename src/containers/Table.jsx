@@ -16,10 +16,10 @@ import '../assets/styles/App.scss';
 import '../assets/styles/Vars.scss';
 
 const API = 'http://localhost:3000/initialState';
-const App = () => {
+const Table = () => {
   const initialState = useInitialState(API);
   return (
-    <div className='App'>
+    <>
       <Navbar>
         {
           initialState.tables.map((item) => <NavbarTable key={item.id} {...item} />)
@@ -40,8 +40,8 @@ const App = () => {
         <OrderItem />
         <OrderItem />
       </Order>
-    </div>
+    </>
   );
 };
 
-export default App;
+export default Table;

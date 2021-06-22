@@ -1,0 +1,64 @@
+@import '../Vars.scss';
+@import '../App.scss';
+
+.login {
+    background-color:$primary;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px); /* El ancho será igual al tamaño de todo el height menos 200px (100px del header + 100px del footer) */
+
+    &__container {
+        background-color: $secundary;
+        border: 2px solid $line;
+        border-radius: 40px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 60px 68px 40px;
+
+
+        &--form {
+            display: flex;
+            flex-direction: column;
+            & label {
+                font-size: 14px;
+            }
+        }
+
+        &--remember-me {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            & a {
+                color: white;
+                font-size: 14px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &--register {
+            font-size: 14px;
+
+            & a {
+                color: white;
+                font-weight: bold;
+                font-size: 16px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
