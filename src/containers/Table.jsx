@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 //modules
-import Navbar from '../components/Navbar';
+import Home from '../containers/Home';
 import NavbarTable from '../components/NavbarTable';
 import Client from '../components/Client';
 import Status from '../components/Status';
@@ -20,11 +20,11 @@ const Table = () => {
   const initialState = useInitialState(API);
   return (
     <>
-      <Navbar>
+      <Home>
         {
           initialState.tables.map((item) => <NavbarTable key={item.id} {...item} />)
         }
-      </Navbar>
+      </Home>
       <Client info={initialState.clients} />
       <Status>
         <StatusItem />
