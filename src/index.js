@@ -9,7 +9,9 @@ const initialState = {
   "user": {},
   "tables":[
     {
-        "id": 1
+        "id": 1,
+        "clientSelected":{},
+        "bill":[]
     },
     {
         "id": 2

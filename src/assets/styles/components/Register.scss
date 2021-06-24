@@ -1,0 +1,54 @@
+@import '../Vars.scss';
+
+.register {
+    grid-row: 1/3;
+    grid-column: 4/5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px); /* El ancho será igual al tamaño de todo el height menos 200px (100px del header + 100px del footer) */
+  
+    &__container {
+        background-color: $secundary;
+        border: 2px solid $line;
+        border-radius: 40px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 60px 68px 40px;
+
+        &--form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        & a {
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+          
+    }
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Muli', sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+  }

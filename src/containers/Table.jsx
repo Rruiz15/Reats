@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { connect } from 'react-redux';
 //modules
 import Home from '../containers/Home';
 import NavbarTable from '../components/NavbarTable';
@@ -15,17 +16,12 @@ import useInitialState from '../hooks/UseInitialState';
 import '../assets/styles/App.scss';
 import '../assets/styles/Vars.scss';
 
-const API = 'http://localhost:3000/initialState';
-const Table = () => {
-  const initialState = useInitialState(API);
+const Table = props => {
+  const { clients, menu } = props;
   return (
     <>
-      <Home>
-        {
-          initialState.tables.map((item) => <NavbarTable key={item.id} {...item} />)
-        }
-      </Home>
-      <Client info={initialState.clients} />
+      <Home/>
+      <Client info={clients} />
       <Status>
         <StatusItem />
         <StatusItem />
@@ -33,7 +29,7 @@ const Table = () => {
       </Status>
       <Menu>
         {
-          initialState.menu.map((item) => <MenuItem key={item.id} {...item} />)
+          menu.map((item) => <MenuItem key={item.id} {...item} />)
         }
       </Menu>
       <Order>
@@ -44,4 +40,11 @@ const Table = () => {
   );
 };
 
-export default Table;
+const mapStateToProps = state => {
+  return {
+    clients: state.clients,
+    menu: state.menu,
+  }
+}
+
+export default connect(mapStateToProps,null)(Table);
