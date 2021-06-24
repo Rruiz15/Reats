@@ -1,0 +1,19 @@
+//vars
+@import '../Vars.scss';
+
+.orderitem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+    font-size: 20px;
+    color:$font;
+    &__product{
+        display: flex;
+        flex-direction: row;
+        &--cant{
+            padding-right: 30px;
+        }
+    }
+}

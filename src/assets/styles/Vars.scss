@@ -1,0 +1,46 @@
+//Colors 
+    $primary: #191919;
+    $secundary: #1e1f21;
+    $line:#585329;
+    $color:#e3ce4a;
+    $fade:#ffffff1d;
+    $font:#f5f5f5; 
+    $fontDisabled:#5a5a62; 
+
+// class 
+
+.divTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 30px 20px 40px;
+    border-bottom: 1px solid $line;
+    & h3 {
+        width: 30%;
+        font-size: 22px;
+        margin: 0;
+        color: $font;
+    }
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 0px 5px 10px;
+    margin: 0;
+    
+    & img{
+        margin: 0;
+        height: 20px;
+        width: 20px;  
+    }
+    
+    & p {
+        padding-left: 10px;
+        color:$fontDisabled;
+        font-size: 18px;
+        margin: 0;
+    }
+}

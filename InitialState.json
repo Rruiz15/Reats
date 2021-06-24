@@ -1,0 +1,55 @@
+{
+    "initialState":{
+        "tables":[
+            {
+                "id": 1
+            },
+            {
+                "id": 2
+            },
+            {
+                "id": 3
+            },
+            {
+                "id": 4
+            }
+        ],
+        "clients":[
+            {
+                "id": 1,
+                "label": "Robert Alejandro Ruiz huerta",
+                "value":{
+                    "name": "Robert Alejandro Ruiz huerta",
+                    "email": "rruiz2298@gmail.com",
+                    "phone": "994021020",
+                    "direction": "Av americo vespucio 4641",
+                    "history":" 22/ 05 / 21"
+                }    
+                
+            },
+            {
+                "id": 2,
+                "label": "Robert Carrillo",
+                "value":{
+                    "name": "Robert Carrillo",
+                    "email": "pipo@gmail.com",
+                    "phone": "123456",
+                    "direction": "Av americo vespucio 4601",
+                    "history":" 22/ 05 / 21"
+                }    
+                
+            }
+
+        ],
+        "menu":[
+            {
+                "id": 1,
+                "name": "Pizza"
+            },
+            {
+                "id": 2,
+                "name": "Pasta"
+            }
+        ]
+    }
+}
