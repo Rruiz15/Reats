@@ -4,7 +4,7 @@ import '../assets/styles/components/MenuItem.scss';
 //statics
 import pizza from '../assets/static/pizza.png';
 
-const MenuItem = ({ id, name }) => {
+const MenuItem = ({ id , name , children}) => {
   return (
     <div className='menuItem'>
       <div className='menuItem__title'>
@@ -15,6 +15,7 @@ const MenuItem = ({ id, name }) => {
           <p>{`${id}. ${name}`}</p>
         </div>
       </div>
+      {children}
     </div>
   );
 };

@@ -1,0 +1,52 @@
+@import '../Vars.scss';
+
+.menuSubItem{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    margin-left: 80px;
+    color:$font;
+    &__title{
+        width: 200px;
+        display: flex;
+        flex-direction:row;
+        align-items: flex-start;
+    }
+
+    &__cant{
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        & p {
+            margin-right:10px;
+        } 
+        & a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            background-color: $line;
+            border-radius: 5px;
+            margin-right:10px;
+        }
+        
+    }
+
+    &__price{
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        & .menuSubItem__sent{
+            width: 25px;
+            height: 25px;
+            background-color: $line;
+            border-radius: 5px;
+            margin-left:25px; 
+        }
+    }
+
+}

@@ -7,6 +7,7 @@ import App from './routes/App';
 
 const initialState = {
   "user": {},
+  "bill": [],
   "tables":[
     {
       "id" : "1"
@@ -42,16 +43,31 @@ const initialState = {
 "menu":[
     {
         "id": 1,
-        "name": "Pizza"
+        "name": "Pizza",
+        "list": [
+          {
+            "id": "1.1",
+            "name": "Margarita",
+            "price": 5990,
+          },
+          {
+            "id": "1.2",
+            "name": "Marinara",
+            "price": 5990,
+          },
+          {
+            "id": "1.3",
+            "name": "Pepperonni",
+            "price": 5990,
+          },
+        ],
     },
-    {
-        "id": 2,
-        "name": "Pasta"
-    }
-  ]
+  ],
 }
 
-const store = createStore(reducer,initialState);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(reducer,initialState,  composeEnhancers());
 
 ReactDom.render(
   <Provider store={store}>

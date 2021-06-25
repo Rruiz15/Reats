@@ -11,10 +11,11 @@ import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import Order from '../components/Order';
 import OrderItem from '../components/OrderItem';
-import useInitialState from '../hooks/UseInitialState';
+import MenuSubItem from '../components/MenuSubItem';
 //styles
 import '../assets/styles/App.scss';
 import '../assets/styles/Vars.scss';
+
 
 const Table = props => {
   const { clients, menu } = props;
@@ -29,7 +30,12 @@ const Table = props => {
       </Status>
       <Menu>
         {
-          menu.map((item) => <MenuItem key={item.id} {...item} />)
+          menu.map((item) => 
+            <MenuItem key={item.id} {...item}>
+              { item.list.map((subItem) => 
+                <MenuSubItem key={`${item.id}.${subItem.id}`} {...subItem} />)
+              }
+            </MenuItem>)
         }
       </Menu>
       <Order>

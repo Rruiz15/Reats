@@ -9,6 +9,7 @@ const reducer = (state,action) => {
             return {
                 ...state,
                 user: action.payload 
+
             }
         default: 
             return state;

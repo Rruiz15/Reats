@@ -1,6 +1,5 @@
 import React, { useState }  from 'react';
 import { connect } from 'react-redux';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Select from 'react-select';
 //styles
 import '../assets/styles/components/Client.scss';

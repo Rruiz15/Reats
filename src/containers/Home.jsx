@@ -15,7 +15,7 @@ const Home = props => {
         {
           tables.map((item) => 
             <Link to={`/table/${item.id}`}>
-              <NavbarTable id={item.id}/>
+              <NavbarTable key={item.id} id={item.id}/>
             </Link>)
         }
       </Navbar>
