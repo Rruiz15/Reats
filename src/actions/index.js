@@ -8,3 +8,8 @@ export const registerRequest = payload => ({
     payload,
 }) 
 
+export const produtSelect = payload => ({
+    type: 'PRODUCT_SELECT',
+    payload,
+})
+

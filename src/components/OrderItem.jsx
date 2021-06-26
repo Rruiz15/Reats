@@ -2,19 +2,20 @@ import React from 'react';
 //styles
 import '../assets/styles/components/OrderItem.scss';
 
-const OrderItem = () => {
+const OrderItem = props => {
+  const { cant , id , name , price } = props
   return (
     <div className='orderitem'>
       <div className='orderitem__product'>
         <div className='orderitem__product--cant'>
-          1 x
+          {`${cant}x `}
         </div>
         <div className='orderitem__product--name'>
-          1.1 Pizza Margarita
+          {` ${id}  ${name}`}
         </div>
       </div>
       <div className='orderitem__price'>
-        6990 $
+        {`${price} $`}
       </div>
     </div>
   );

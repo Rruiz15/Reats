@@ -11,7 +11,12 @@ const reducer = (state,action) => {
                 user: action.payload 
 
             }
-        default: 
+        case 'PRODUCT_SELECT':
+            return {
+             ...state,
+                bill : state.bill.concat(action.payload)
+             }
+        default:
             return state;
     }
 }

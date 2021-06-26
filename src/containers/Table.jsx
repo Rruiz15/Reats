@@ -18,7 +18,7 @@ import '../assets/styles/Vars.scss';
 
 
 const Table = props => {
-  const { clients, menu } = props;
+  const { clients, menu, bill } = props;
   return (
     <>
       <Home/>
@@ -33,14 +33,15 @@ const Table = props => {
           menu.map((item) => 
             <MenuItem key={item.id} {...item}>
               { item.list.map((subItem) => 
-                <MenuSubItem key={`${item.id}.${subItem.id}`} {...subItem} />)
+                <MenuSubItem key={`${item.id}.${subItem.id}`} subname={item.name} {...subItem} />)
               }
             </MenuItem>)
         }
       </Menu>
       <Order>
-        <OrderItem />
-        <OrderItem />
+        { 
+          bill.map((item) => <OrderItem key={item.id} {...item}/>)
+        }
       </Order>
     </>
   );
@@ -50,6 +51,7 @@ const mapStateToProps = state => {
   return {
     clients: state.clients,
     menu: state.menu,
+    bill: state.bill,
   }
 }
 
