@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { setDisc } from '../actions';
 //stiles
 import '../assets/styles/components/Order.scss';
 
-const Order = ({ children }) => {
+const Order = props => {
+  const { children, subTotal, total} = props
+  let [disc, setValues] = useState(0)
+  
+  const handleDiscount = event => {
+    setValues(disc = event.target.value)
+    props.setDisc(disc)
+  }
+
+ 
+
+
   return (
     <div className='order'>
       <div className='order__title'>
@@ -14,16 +27,16 @@ const Order = ({ children }) => {
       <div className='order__results'>
         <div className='order__results--subtotal'>
           <p>Subtotal</p>
-          <p>35990 $</p>
+          <p>{`${subTotal} $`}</p>
         </div>
         <div className='order__results--discount'>
           <p>Descuento</p>
-          <input type='number' placeholder='0 $' />
+          <input type='number' placeholder='0 $' onBlur={handleDiscount}/>
           <p>0$</p>
         </div>
         <div className='order__results--total'>
           <p>Total</p>
-          <p>35990 $</p>
+          <p>{`${total} $`}</p>
         </div>
         <div className='order__buttons'>
           <a className='order__buttons--pay' href='#'>
@@ -40,4 +53,8 @@ const Order = ({ children }) => {
   );
 };
 
-export default Order;
+const mapDispatchToProps = {
+  setDisc,
+}
+
+export default connect(null,mapDispatchToProps)(Order);

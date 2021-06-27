@@ -8,6 +8,8 @@ import App from './routes/App';
 const initialState = {
   "user": {},
   "bill": [],
+  "subTotal": 0 ,
+  "total": 0,
   "tables":[
     {
       "id" : "1"

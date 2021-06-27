@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { produtSelect } from '../actions';
+import { produtSelect, setSubtotal, setTotal } from '../actions';
 //styles 
 import '../assets/styles/components/MenuSubItem.scss'
 //static 
@@ -23,6 +23,8 @@ const MenuSubItem = props => {
 
   const handleclick = () => {
     props.produtSelect(bill)
+    props.setSubtotal(bill.price)
+    props.setTotal(bill.price)
   }
 
   return (
@@ -38,7 +40,7 @@ const MenuSubItem = props => {
       <div className="menuSubItem__price">
         <p>{`${price} $`}</p>
         <div className="menuSubItem__sent">
-          <img src={sent} alt="sent"  onClick={handleclick} />
+          <img src={sent} alt="sent"  onMouseDown={handleSelect} onMouseUp={handleclick} />
         </div>
       </div>
       
@@ -47,7 +49,9 @@ const MenuSubItem = props => {
 };
 
 const mapDispathToProps = {
-  produtSelect
+  produtSelect,
+  setSubtotal,
+  setTotal
 }
 
 

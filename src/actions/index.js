@@ -13,3 +13,18 @@ export const produtSelect = payload => ({
     payload,
 })
 
+export const setSubtotal = payload => ({
+    type: 'SET_SUBTOTAL',
+    payload,
+})
+
+export const setTotal = payload => ({
+    type: 'SET_TOTAL',
+    payload,
+})
+
+export const setDisc = payload => ({
+    type: 'SET_DISC',
+    payload,
+})
+

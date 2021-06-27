@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 //modules
 import Home from '../containers/Home';
-import NavbarTable from '../components/NavbarTable';
 import Client from '../components/Client';
 import Status from '../components/Status';
 import StatusItem from '../components/StatusItem';
@@ -18,7 +17,7 @@ import '../assets/styles/Vars.scss';
 
 
 const Table = props => {
-  const { clients, menu, bill } = props;
+  const { clients, menu, bill , subTotal, total } = props;
   return (
     <>
       <Home/>
@@ -38,7 +37,7 @@ const Table = props => {
             </MenuItem>)
         }
       </Menu>
-      <Order>
+      <Order subTotal={subTotal} total={total}>
         { 
           bill.map((item) => <OrderItem key={item.id} {...item}/>)
         }
@@ -52,6 +51,8 @@ const mapStateToProps = state => {
     clients: state.clients,
     menu: state.menu,
     bill: state.bill,
+    subTotal: state.subTotal,
+    total: state.total,
   }
 }
 
