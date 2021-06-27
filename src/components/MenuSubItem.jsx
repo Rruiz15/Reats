@@ -8,8 +8,16 @@ import sent from '../assets/static/sent.png'
 
 const MenuSubItem = props => {
   const { id , name , price , cant, subname } = props
-  const [  bill , setValues ]  = useState({
-  })
+  const [  bill , setValues ]  = useState({})
+  let [cont, setCount] = useState(1)
+
+  const handleContSum = () => {
+    setCount(cont + 1)
+  }
+
+  const handleContRest = () => {
+    setCount(cont - 1)
+  } 
 
   const handleSelect = () => {
     setValues({
@@ -17,7 +25,7 @@ const MenuSubItem = props => {
       id : id,
       name : `${subname} ${name}`, 
       price : price,
-      cant: cant ,
+      cant: cont ,
     })
   }
 
@@ -25,7 +33,7 @@ const MenuSubItem = props => {
     props.produtSelect(bill)
     props.setSubtotal(bill.price)
     props.setTotal(bill.price)
-  }
+  }             
 
   return (
     <div className='menuSubItem'>
@@ -33,9 +41,9 @@ const MenuSubItem = props => {
         <p onClick={handleSelect}>{`${id}   ${name}`}</p>
       </div>
       <div className="menuSubItem__cant">
-        <a >-</a>
-        <p>{cant}</p>
-        <a>+</a>
+        <a onClick={handleContRest}>-</a>
+        <p>{cont}</p>
+        <a onClick={handleContSum}>+</a>
       </div>
       <div className="menuSubItem__price">
         <p>{`${price} $`}</p>
