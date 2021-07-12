@@ -1,3 +1,4 @@
+
 const reducer = (state,action) => { 
     switch (action.type) {
         case 'LOGIN_REQUEST':
@@ -13,18 +14,22 @@ const reducer = (state,action) => {
             }
         case 'PRODUCT_SELECT':
             return {
-             ...state,
-                bill : state.bill.concat(action.payload)
-             }
-        case 'SET_SUBTOTAL':
+                ...state,
+                   bill : [...state.bill,action.payload],
+                   subTotal: state.subTotal + action.payload.price,
+                   total: state.total + action.payload.price
+                }
+        case 'PRODUCT_UPDATE':
+            state.bill.map(item => {
+                if (item.id == action.payload.id){
+                    item.price = action.payload.price
+                    item.cant = action.payload.cant
+                }
+            })
+        case 'RESET_TOTAL':
             return {
             ...state,
-                subTotal: state.subTotal + action.payload 
-            }
-        case 'SET_TOTAL':
-            return {
-            ...state,
-                total: state.total + action.payload 
+                total: action.payload 
             }
         case 'SET_DISC':
             return {

@@ -8,7 +8,7 @@ const OrderItem = props => {
     <div className='orderitem'>
       <div className='orderitem__product'>
         <div className='orderitem__product--cant'>
-          {`${cant}x `}
+          {`${cant} x `}
         </div>
         <div className='orderitem__product--name'>
           {` ${id}  ${name}`}

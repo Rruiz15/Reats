@@ -13,6 +13,12 @@ export const produtSelect = payload => ({
     payload,
 })
 
+export const produtUpdate = payload => ({
+    type: 'PRODUCT_UPDATE',
+    payload,
+})
+
+
 export const setSubtotal = payload => ({
     type: 'SET_SUBTOTAL',
     payload,
@@ -20,6 +26,11 @@ export const setSubtotal = payload => ({
 
 export const setTotal = payload => ({
     type: 'SET_TOTAL',
+    payload,
+})
+
+export const resetTotal = payload => ({
+    type: 'RESET_TOTAL',
     payload,
 })
 

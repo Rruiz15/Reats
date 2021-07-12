@@ -1,42 +1,49 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { produtSelect, setSubtotal, setTotal } from '../actions';
-//styles 
-import '../assets/styles/components/MenuSubItem.scss'
-//static 
-import sent from '../assets/static/sent.png'
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { produtSelect, produtUpdate } from "../actions";
+//styles
+import "../assets/styles/components/MenuSubItem.scss";
+//static
+import sent from "../assets/static/sent.png";
 
-const MenuSubItem = props => {
-  const { id , name , price , cant, subname } = props
-  const [  bill , setValues ]  = useState({})
-  let [cont, setCount] = useState(1)
+const MenuSubItem = (props) => {
+  const { id, name, price, subname, bill } = props;
+  const [product, setValues] = useState({});
+  let [cont, setCount] = useState(1);
 
   const handleContSum = () => {
-    setCount(cont + 1)
-  }
+    setCount(cont + 1);
+  };
 
   const handleContRest = () => {
-    setCount(cont - 1)
-  } 
+    setCount(cont - 1);
+  };
 
   const handleSelect = () => {
-    setValues({
-      ...bill,
-      id : id,
-      name : `${subname} ${name}`, 
-      price : price,
-      cant: cont ,
-    })
+      setValues({
+        ...product,
+        id,
+        name: `${subname} ${name}`,
+        price: cont * price,
+        cant: cont,
+      })
   }
 
   const handleclick = () => {
-    props.produtSelect(bill)
-    props.setSubtotal(bill.price)
-    props.setTotal(bill.price)
-  }             
+    const tmp = bill.find((b) => b.id === id);
+    if (tmp) {
+      let _tmp = { ...tmp };
+      _tmp.cant += cont;
+      _tmp.price += cont * price;
+      props.produtUpdate(_tmp)
+    } else {
+      props.produtSelect(product);
+    }
+    setCount(1);
+  };
 
   return (
-    <div className='menuSubItem'>
+    <div className="menuSubItem">
       <div className="menuSubItem__title">
         <p onClick={handleSelect}>{`${id}   ${name}`}</p>
       </div>
@@ -48,19 +55,27 @@ const MenuSubItem = props => {
       <div className="menuSubItem__price">
         <p>{`${price} $`}</p>
         <div className="menuSubItem__sent">
-          <img src={sent} alt="sent"  onMouseDown={handleSelect} onMouseUp={handleclick} />
+          <img
+            src={sent}
+            alt="sent"
+            onMouseDown={handleSelect}
+            onMouseUp={handleclick}
+          />
         </div>
       </div>
-      
     </div>
   );
 };
 
 const mapDispathToProps = {
   produtSelect,
-  setSubtotal,
-  setTotal
-}
+  produtUpdate,
+};
 
+const mapStateToProps = (state) => {
+  return {
+    bill: state.bill,
+  };
+};
 
-export default connect(null,mapDispathToProps)(MenuSubItem);
+export default connect(mapStateToProps, mapDispathToProps)(MenuSubItem);

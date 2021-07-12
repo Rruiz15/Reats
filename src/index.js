@@ -50,20 +50,17 @@ const initialState = {
           {
             "id": "1.1",
             "name": "Margarita",
-            "price": 5990,
-            "cant": 1,
+            "price": 4990,
           },
           {
             "id": "1.2",
             "name": "Marinara",
             "price": 5990,
-            "cant": 1,
           },
           {
             "id": "1.3",
             "name": "Pepperonni",
-            "price": 5990,
-            "cant": 1,
+            "price": 6990,
           },
         ],
     },

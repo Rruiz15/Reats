@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { setDisc } from '../actions';
+import { setDisc, resetTotal } from '../actions';
 //stiles
 import '../assets/styles/components/Order.scss';
 
@@ -9,13 +9,14 @@ const Order = props => {
   let [disc, setValues] = useState(0)
   
   const handleDiscount = event => {
-    setValues(disc = event.target.value)
-    props.setDisc(disc)
+    if (event.target.value == 0){
+      props.resetTotal(subTotal)
+    } else {
+      setValues(disc = event.target.value)
+      props.setDisc(disc)
+    }
+    
   }
-
- 
-
-
   return (
     <div className='order'>
       <div className='order__title'>
@@ -55,6 +56,7 @@ const Order = props => {
 
 const mapDispatchToProps = {
   setDisc,
+  resetTotal,
 }
 
 export default connect(null,mapDispatchToProps)(Order);
