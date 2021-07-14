@@ -15,17 +15,24 @@ const reducer = (state,action) => {
         case 'PRODUCT_SELECT':
             return {
                 ...state,
-                   bill : [...state.bill,action.payload],
-                   subTotal: state.subTotal + action.payload.price,
-                   total: state.total + action.payload.price
+                    bill : [...state.bill,action.payload],
+                    subTotal: state.subTotal + action.payload.price,
+                    total: state.total + action.payload.price
                 }
         case 'PRODUCT_UPDATE':
-            state.bill.map(item => {
+            let itemPrice = 0
+             state.bill.find(item => {
                 if (item.id == action.payload.id){
+                    itemPrice = item.price
                     item.price = action.payload.price
                     item.cant = action.payload.cant
-                }
+                }  
             })
+            return{
+                ...state,
+                subTotal: state.subTotal + action.payload.price - itemPrice,
+                total: state.total + action.payload.price - itemPrice
+            }
         case 'RESET_TOTAL':
             return {
             ...state,

@@ -19,16 +19,6 @@ export const produtUpdate = payload => ({
 })
 
 
-export const setSubtotal = payload => ({
-    type: 'SET_SUBTOTAL',
-    payload,
-})
-
-export const setTotal = payload => ({
-    type: 'SET_TOTAL',
-    payload,
-})
-
 export const resetTotal = payload => ({
     type: 'RESET_TOTAL',
     payload,

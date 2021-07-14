@@ -31,9 +31,10 @@ const MenuSubItem = (props) => {
 
   const handleclick = () => {
     const tmp = bill.find((b) => b.id === id);
+    console.log(tmp)
     if (tmp) {
       let _tmp = { ...tmp };
-      _tmp.cant += cont;
+      _tmp.cant += cont;  
       _tmp.price += cont * price;
       props.produtUpdate(_tmp)
     } else {
