@@ -32,6 +32,13 @@ const reducer = (state,action) => {
                 ...state,
                 subTotal: state.subTotal + action.payload.price - itemPrice,
                 total: state.total + action.payload.price - itemPrice
+        }
+        case 'PRODUCT_DELETE':
+            return{
+                ...state,
+                bill: state.bill.filter(product => product.id != action.payload.id),
+                subTotal: state.subTotal - action.payload.price,
+                total: state.total - action.payload.price
             }
         case 'RESET_TOTAL':
             return {

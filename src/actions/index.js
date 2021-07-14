@@ -18,6 +18,10 @@ export const produtUpdate = payload => ({
     payload,
 })
 
+export const productDelete = payload => ({
+    type: 'PRODUCT_DELETE',
+    payload,
+})
 
 export const resetTotal = payload => ({
     type: 'RESET_TOTAL',
