@@ -1,29 +1,32 @@
 @import '../Vars.scss';
 
 .clientsearch{
+    background-color: $primary;
+    border-radius: 10px;
     width: 70%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    height:25px;
+    height:45px;
     margin: 0px;
     padding: 0px;
     img{
         width: 20px;
         height: 20px;
-        margin-left:5px;
+        margin-left:10px;
     }
 
     & .react-select-container{
         width: 90%;
         border:none;
         & .react-select__control{
-            background-color:$secundary;
+            background-color:$primary;
             border: 0px;
             &--is-focused{
                 box-shadow: none;
             }
             & .react-select__value-container{
+                background-color: none;
                 border: 0px;
                 & .css-b8ldur-Input{
                     & .react-select__input{

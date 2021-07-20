@@ -23,6 +23,13 @@ const Order = props => {
         <h3>Orden de la Mesa</h3>
       </div>
       <div className='order__info'>
+        <div className="order__info--text">
+          <div>
+            <p>Cant</p>
+            <p>Producto</p>
+          </div>
+          <p>Precio</p>
+        </div>
         {children}
       </div>
       <div className='order__results'>

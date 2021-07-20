@@ -33,17 +33,36 @@
     &__title{
         grid-row: 1 / 2 ;
         @extend .divTitle;
-        border-left: 1px solid $line;
+        //border-left: 1px solid $line;
+        & h3 {
+            width: 60%;
+        }
     }
 
     &__info{
         grid-row: 2 / 3 ;
-        background-color: $primary;
-        border-left: 1px solid $line;
+        //border-left: 1px solid $line;
         display: flex;
         flex-direction: column;
         overflow: scroll;
         
+        &--text{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 15px 0 15px;
+            & div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width:35%;
+            }
+            & p {
+                font-size: 18px;
+                color: $fontDisabled;
+            }
+        }
+
         &::-webkit-scrollbar {
             display: none;
         }
@@ -55,15 +74,16 @@
         flex-direction: column;
         display: flex;
         justify-content: space-evenly;
-        border-left: 1px solid $line;
-        border-top: 1px solid $line;
+        //border-left: 1px solid $line;
+        //border-top: 1px solid $line;
+
         &--subtotal{
             @extend .info;
         }
 
         &--discount{
             @extend .info;
-            border-bottom: 1px solid $line;
+            //border-bottom: 1px solid $line;
         }
 
         &--total{

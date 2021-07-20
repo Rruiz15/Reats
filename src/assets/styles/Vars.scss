@@ -1,11 +1,11 @@
 //Colors 
-    $primary: #191919;
-    $secundary: #1e1f21;
+    $primary: #EDF0F2;
+    $secundary:#Fff;
     $line:#585329;
-    $color:#e3ce4a;
+    $color:#323741;
     $fade:#ffffff1d;
-    $font:#f5f5f5; 
-    $fontDisabled:#5a5a62; 
+    $font:#000; 
+    $fontDisabled:#7F7F7F; 
 
 // class 
 
@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 20px 30px 20px 40px;
-    border-bottom: 1px solid $line;
+    //border-bottom: 1px solid $line;
     & h3 {
         width: 30%;
         font-size: 22px;

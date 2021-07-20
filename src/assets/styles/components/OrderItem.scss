@@ -9,17 +9,32 @@
     margin: 15px;
     font-size: 20px;
     color:$font;
+
     &__product{
         display: flex;
         flex-direction: row;
         &--cant{
             padding-right: 30px;
+            color: $fontDisabled;
         }
     }
+
+    &__price{
+        display: flex;
+        flex-direction: row;
+        
+    }
+
     &__delete{
+        display: flex;
+        align-items: center;
+        padding-left:10px;
+
         & img {
-            height:10px;
-            width: 10px;
+            height:15px;
+            width: 15px;
         }
     }
+
+   
 }

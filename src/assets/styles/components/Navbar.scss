@@ -7,7 +7,7 @@
     grid-template-rows:repeat(8, 1fr);
     justify-items: center;
     align-items: center;
-    background-color: $primary;
+    background-color: $color;
     margin-right:15px;
     border-right: 1px solid $line;
     
@@ -25,7 +25,7 @@
         display: flex;
         align-items: center;
         border-radius: 15px;
-        border: solid 1px $line;
+        border: solid 1px $fontDisabled;
         & img{
             margin-left:10px;
             height: 20px;

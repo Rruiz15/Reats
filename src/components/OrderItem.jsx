@@ -25,9 +25,9 @@ const OrderItem = props => {
       </div>
       <div className='orderitem__price'>
         {`${price} $`}
-      </div>
-      <div className='orderitem__delete' onClick={handleclick} >
+        <div className='orderitem__delete' onClick={handleclick} >
           <img src={Delete} alt="delete"/>
+        </div>
       </div>
     </div>
   );
